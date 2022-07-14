@@ -1,6 +1,5 @@
 
-''' Faça um programa que preeencha uma matrzi 4 x 4 com o produto do valor da linha
- e da coluna de cada elemento Em seguida, imprima na tela a matriz. '''
+''' Leia uma matrzi 4 x 4, imprima a matrzi e retorne a localização (linha e coluna) do maior valor. '''
 
 m = []
 z = 0
