@@ -1,6 +1,7 @@
 
 ''' Faça um programa que preeencha uma matrzi 4 x 4 com o produto do valor da linha
  e da coluna de cada elemento Em seguida, imprima na tela a matriz. '''
+
 m = []
 z = 0
 maior_valor = []
@@ -13,6 +14,7 @@ for i in range(1, 5):
         else:
             linha.append(i * n)
     m.append(linha)
+    
 for im, vm in enumerate(m):
     if z <= max(vm):
         z = max(vm)
@@ -21,5 +23,6 @@ for im, vm in enumerate(m):
 
 for i in maior_valor:
     print(f'Maior valor está na linha {i[0]} coluna {i[1]}')
+
 for x in m:
     print(x)
