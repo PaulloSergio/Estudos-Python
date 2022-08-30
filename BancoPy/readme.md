@@ -1,13 +1,32 @@
-Projeto de um banco em Python.
+A Bank Project in Python.
 
-Funcionalidades:
+Features:
 
-Criar conta
+Create account.   
 
-Efetuar saque
+Withdraw.
 
-Efetuar depósito
+Make a Deposit.
 
-Efetuar transferência
+Make a Transfer.
 
-Listar contas do banco
+List bank accounts.
+
+Obs: In order for the function clear work in pycharm, you need to enable "Emulate terminal in output console".
+
+--------------------------------------------------------------------------------------------------------------------
+Projeto de um banco em Python.                                                  
+
+Funcionalidades:                                                              
+
+Criar conta.                                                                                           
+
+Efetuar saque.                                                                   
+
+Efetuar depósito.                                                                
+
+Efetuar transferência.                                                           
+
+Listar contas do banco.                                                                                                                         
+
+Obs: Para que a função clear() funcione no Pycharm, é preciso habilitar "Emular terminal na saida do console".
