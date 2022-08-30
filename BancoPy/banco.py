@@ -4,6 +4,8 @@ from time import sleep
 from models.cliente import Cliente
 from models.conta import Conta
 
+import os
+
 contas: List[Conta] = []
 
 
@@ -26,6 +28,7 @@ def menu() -> None:
     print('6 - Sair do sistema')
 
     opcao: int = int(input())
+    os.system('cls')
 
     if opcao == 1:
         criar_conta()
@@ -65,46 +68,63 @@ def criar_conta() -> None:
     print('Dados da conta: ')
     print(conta)
     sleep(2)
+    os.system('cls')
     menu()
 
 
 def efetuar_saque() -> None:
     if len(contas) > 0:
+        ls_contas()
+
         numero: int = int(input('Informe o número da sua conta: '))
 
         conta: Conta = buscar_conta_por_numero(numero)
 
         if conta:
+            print('-' * 50)
             valor: float = float(input('Digite o valor a ser sacado: '))
             conta.sacar(valor)
+            print('-' * 50)
+            print(conta)
+            print('-' * 50)
         else:
             print(f'Não foi encontrada a conta com o número: {numero}')
     else:
         print('Ainda não existem contas cadastradas.')
-    sleep(2)
+    sleep(3)
+    os.system('cls')
     menu()
 
 
 def efetuar_deposito() -> None:
     if len(contas) > 0:
+        ls_contas()
+
         numero: int = int(input('Informe o número da sua conta: '))
 
         conta: Conta = buscar_conta_por_numero(numero)
 
         if conta:
+            print('-' * 50)
             valor: float = float(input('Digite o valor a ser depositado: '))
             conta.depositar(valor)
+            print('-' * 50)
+            print(conta)
+            print('-' * 50)
         else:
             print(f'Não foi encontrada a conta com o número: {numero}')
     else:
         print('Ainda não existem contas cadastradas.')
-    sleep(2)
+    sleep(3)
+    os.system('cls')
     menu()
 
 
 def efetuar_transferencia() -> None:
     if len(contas) > 0:
-        numero_o: int = int(input('Informe o número da sua conta:'))
+        ls_contas()
+
+        numero_o: int = int(input('Informe o número da conta de origem: '))
 
         conta_o: Conta = buscar_conta_por_numero(numero_o)
 
@@ -113,15 +133,20 @@ def efetuar_transferencia() -> None:
             conta_d: Conta = buscar_conta_por_numero(numero_d)
 
             if conta_d:
-                valor: float = float(input('Digite o valor a ser transferido.'))
+                valor: float = float(input('Digite o valor a ser transferido: '))
                 conta_o.transferir(conta_d, valor)
+                print('-' * 50)
+                print(conta_o)
+                print('-' * 50)
+                print(conta_d)
             else:
                 print(f'A conta destino com número {numero_d} não foi encontrada.')
         else:
             print(f'Não foi encontrada a conta com o número: {numero_o}')
     else:
         print('Ainda não existem contas cadastradas.')
-    sleep(2)
+    sleep(3)
+    os.system('cls')
     menu()
 
 
@@ -134,7 +159,8 @@ def listar_contas() -> None:
     else:
         print('Ainda não existem contas cadastradas.')
 
-    sleep(2)
+    sleep(3)
+    os.system('cls')
     menu()
 
 
@@ -147,6 +173,13 @@ def buscar_conta_por_numero(numero: int) -> Conta:
                 c = conta
 
     return c
+
+
+def ls_contas() -> None:
+    for conta in contas:
+        print(conta)
+        print('-' * 50)
+    sleep(1)
 
 
 if __name__ == '__main__':
