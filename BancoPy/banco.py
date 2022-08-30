@@ -4,6 +4,8 @@ from time import sleep
 from models.cliente import Cliente
 from models.conta import Conta
 
+from utils.helper import clear
+
 import os
 
 contas: List[Conta] = []
@@ -28,7 +30,7 @@ def menu() -> None:
     print('6 - Sair do sistema')
 
     opcao: int = int(input())
-    os.system('cls')
+    clear()
 
     if opcao == 1:
         criar_conta()
@@ -68,7 +70,7 @@ def criar_conta() -> None:
     print('Dados da conta: ')
     print(conta)
     sleep(2)
-    os.system('cls')
+    clear()
     menu()
 
 
@@ -92,7 +94,7 @@ def efetuar_saque() -> None:
     else:
         print('Ainda não existem contas cadastradas.')
     sleep(3)
-    os.system('cls')
+    clear()
     menu()
 
 
@@ -116,7 +118,7 @@ def efetuar_deposito() -> None:
     else:
         print('Ainda não existem contas cadastradas.')
     sleep(3)
-    os.system('cls')
+    clear()
     menu()
 
 
@@ -146,7 +148,7 @@ def efetuar_transferencia() -> None:
     else:
         print('Ainda não existem contas cadastradas.')
     sleep(3)
-    os.system('cls')
+    clear()
     menu()
 
 
@@ -160,7 +162,7 @@ def listar_contas() -> None:
         print('Ainda não existem contas cadastradas.')
 
     sleep(3)
-    os.system('cls')
+    clear()
     menu()
 
 
